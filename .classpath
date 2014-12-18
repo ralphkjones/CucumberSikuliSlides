@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src/main/resources/googleSearch"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-android-arm.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-android-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/artoolkitplus-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-android-arm.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-android-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/ffmpeg-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/flycapture.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/flycapture-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/flycapture-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/flycapture-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/flycapture-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/javacpp.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/javacv.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libdc1394.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libdc1394-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libdc1394-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libdc1394-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/libfreenect-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-android-arm.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-android-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-linux-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/opencv-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/videoinput.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/videoinput-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/openCvJLib/javacv-bin/videoinput-windows-x86_64.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
