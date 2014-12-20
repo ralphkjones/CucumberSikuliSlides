@@ -45,7 +45,7 @@ See blog at http://mmstratton.com/wp/javacv-setup/ for information: Its quoted h
 
 To correct:
 
-# Installing OpenCV
+## Installing OpenCV
 
 JavaCV is only a wrapper around OpenCV, so you have to have OpenCV first for anything to work. Sometimes it can be a huge pain installing libraries in a windows environment. Luckily there are working binaries for OpenCV. All you need to do is download and install them. The installer is really just a self-extracting zip file though, so once OpenCV has been extracted we need to add the bin/ folders to out PATH system variable, otherwise it wont be useable.
 
@@ -61,9 +61,9 @@ as long as your PATH is set correctly, after several hours debugging you tend to
 like that and taking safe routes. Extract OpenCV anywhere you want, but if you are having trouble, try
 moving it to C:\
 
-# Installing JavaCV
+## Installing JavaCV
 
-* If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so
+*If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so
 
 <dependency>
   <groupId>org.bytedeco</groupId>
@@ -91,12 +91,14 @@ of examples out there about how to do this so I wont go in to too much detail, b
 Project > Properties > Java Build Path > Libraries > Add External JARs
 Navigate to the location of JavaCV on your file system, for me that is C:\lib\javacv-bin
 Add all the jars, yes all of them.
-You should be good to go now. If not, you might need to read the next section. *
+You should be good to go now. If not, you might need to read the next section.*
 
 # feature an and pptx path:
 
 src\test\resources\googleSearch
 
-# One Jar I would love to have this as a one jar executable. I have never been able to have the one jar
+# One Jar
+
+I would love to have this as a one jar executable. I have never been able to have the one jar
 class loader find the glue. P. Simon Tufts
 
