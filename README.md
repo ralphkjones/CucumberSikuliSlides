@@ -47,47 +47,46 @@ To correct:
 
 ## Installing OpenCV
 
-JavaCV is only a wrapper around OpenCV, so you have to have OpenCV first for anything to work. Sometimes it can be a huge pain installing libraries in a windows environment. Luckily there are working binaries for OpenCV. All you need to do is download and install them. The installer is really just a self-extracting zip file though, so once OpenCV has been extracted we need to add the bin/ folders to out PATH system variable, otherwise it wont be useable.
+*JavaCV is only a wrapper around OpenCV, so you have to have OpenCV first for anything to work. Sometimes it can be a huge pain installing libraries in a windows environment. Luckily there are working binaries for OpenCV. All you need to do is download and install them. The installer is really just a self-extracting zip file though, so once OpenCV has been extracted we need to add the bin/ folders to out PATH system variable, otherwise it wont be useable.*
 
-Download OpenCV-2.3.1-win-superpack.exe
-Install to C:\
-Add C:\opencv\build\x64\vc10\bin;C:\opencv\build\common\tbb\intel64\vc10\ to your PATH system variable
-If you use a newer version of OpenCV you might end up adding a different path. Most people didn’t have put
-C:\opencv\build\common\tbb\intel64\vc10\ on their PATH, but it seems very important for the version I have.
+*Download OpenCV-2.3.1-win-superpack.exe*
+*Install to C:\*
+*Add C:\opencv\build\x64\vc10\bin;C:\opencv\build\common\tbb\intel64\vc10\ to your PATH system variable*
+*If you use a newer version of OpenCV you might end up adding a different path. Most people didn’t have put*
+*C:\opencv\build\common\tbb\intel64\vc10\ on their PATH, but it seems very important for the version I have.*
 
-I also saw several people insisting that it was very important that OpenCV be installed to the root
-of your C drive. While I am pretty sure you should be able to move it around anywhere and it work,
-as long as your PATH is set correctly, after several hours debugging you tend to start dropping assumptions
-like that and taking safe routes. Extract OpenCV anywhere you want, but if you are having trouble, try
-moving it to C:\
+*I also saw several people insisting that it was very important that OpenCV be installed to the root*
+*of your C drive. While I am pretty sure you should be able to move it around anywhere and it work,*
+*as long as your PATH is set correctly, after several hours debugging you tend to start dropping assumptions*
+*like that and taking safe routes. Extract OpenCV anywhere you want, but if you are having trouble, try*
+*moving it to C:\*
 
 ## Installing JavaCV
 
 *If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so*
-**
-*<dependency>*
-*  <groupId>org.bytedeco</groupId>*
-*  <artifactId>javacv</artifactId>*
-*  <version>0.9</version>*
-*</dependency>*
+<dependency>
+  \<groupId>org.bytedeco</groupId>
+  \<artifactId>javacv</artifactId>
+  \<version>0.9</version>
+</dependency>
 *Their github page even suggests it saying *
 *we can also have everything downloaded and installed automatically.*
 *While this will get JavaCV set up with your java project, it unfortunately will not*
 *play so well with your OpenCV native libraries you installed in the last step.*
 *Or it didn’t for me. I could not find a way to get the maven dependency working.*
 *And I wanted it to work so badly.*
-**
+
 *Instead we will install the Jar files manually and add them to the projects build path.*
-**
+
 *Download javacv-0.9-bin.zip*
 *Extract the zip file to anywhere, I chose C:\lib*
 *Remember where you extract JavaCV, we will need this location when configuring the build path next.*
-**
+
 *Add JavaCV to your project’s build path in Eclipse*
-**
+
 *We need to point our project to the JavaCV jar files we extracted in the previous step. There are plenty*
 *of examples out there about how to do this so I wont go in to too much detail, but the basics in Eclipse are:*
-**
+
 *Project > Properties > Java Build Path > Libraries > Add External JARs*
 *Navigate to the location of JavaCV on your file system, for me that is C:\lib\javacv-bin*
 *Add all the jars, yes all of them.*
