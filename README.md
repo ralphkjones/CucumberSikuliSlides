@@ -73,8 +73,7 @@ To correct:
 </dependency>
 ```
 
-*Their github page even suggests it saying *
-*we can also have everything downloaded and installed automatically.*
+*Their github page even suggests it saying we can also have everything downloaded and installed automatically.*
 *While this will get JavaCV set up with your java project, it unfortunately will not*
 *play so well with your OpenCV native libraries you installed in the last step.*
 *Or it didn’t for me. I could not find a way to get the maven dependency working.*
@@ -103,5 +102,5 @@ src\test\resources\googleSearch
 # One Jar
 
 I would love to have this as a one jar executable. I have never been able to have the one jar
-class loader find the glue. P. Simon Tufts
+class loader find the glue. In the name of P. Simon Tufts
 
