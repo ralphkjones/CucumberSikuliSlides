@@ -1,96 +1,102 @@
-# Cucumber-Java Skeleton
+# CucumberSikuliSlides
 
-This is the simplest possible build script setup for Cucumber using Java.
-There is nothing fancy like a webapp or browser testing. All this does is to show you how
-to install and run Cucumber!
+This is the simplest possible build script setup for using Cucumber with Sikuli Slides in the step definitions.
 
-## Get the code
+The project tests three data sets in a DataTable:
 
-Git:
+@googleSearch
+Feature: Google Searches
+  
+  In order to learn the sikuli slides ineterface to cucmber jvm I want to
+  Use Google to search for different subjects and give different results
 
-    git clone https://github.com/cucumber/cucumber-java-skeleton.git
-    cd cucumber-java-skeleton
+  Scenario Outline: Search for a few things at www.google.com
+    Given I have opened google as my search engine
+    When I enter "<searchString>"
+    Then I should see "<powerPointFile>" "<helloBlurb>"
 
-Subversion:
+    Examples: 
+      | searchString  | powerPointFile    | helloBlurb           |
+      | amazon.com    | amazon.pptx       | Hello Amazon!        |
+      | sikuli slides | sikuliSlides.pptx | Hello Sikuli Slides! |
+      | cucumber jvm  | cucumberJvm.pptx  | Hello Cucumber JVM!  |
 
-    svn checkout https://github.com/cucumber/cucumber-java-skeleton
-    cd cucumber-java-skeleton
 
-Or simply [download](https://github.com/cucumber/cucumber-java-skeleton/releases) the latest
-`vX.Y.Z` zip or tarball.
+This first dataset will work, the others work as far as the java. They dont work because the slides need to 
+be edited in Powerpoint. I purposly left them as not working so you could see  a passed test and a failed test.
+The problem is not with cuucmber, java or sikuli slides; the problem is in image recognition
 
-## Use Maven
+# Problems, etc ...
 
-Open a command window and run:
+I could only make this run in the Eclipse IDE. I could not make it run in maven because I could not use the
+external image recognition jars in my loacl repository. I had to add them in as external jars in my eclipse
+project.
 
-    mvn test
+Running mvn test goes to google and then fails on image recognition:
 
-This runs Cucumber features using Cucumber's JUnit runner. The `@RunWith(Cucumber.class)` annotation on the `RunCukesTest`
-class tells JUnit to kick off Cucumber.
+Running googleSearch.RunCukesTest
+203 [main] INFO org.sikuli.slides.api.AutomationExecutor - Execute slide 1 of 1
+387 [main] INFO org.sikuli.slides.api.AutomationExecutor - Execute slide 1 of 2
+Exception in thread "Thread-2" java.lang.UnsatisfiedLinkError: no jniopencv_core in java.library.path
+        at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1857)
+        at java.lang.Runtime.loadLibrary0(Runtime.java:870)
 
-## Use Ant
+See blog at http://mmstratton.com/wp/javacv-setup/ for information: Its quoted here
 
-Open a command window and run:
+To correct:
 
-    ant download
-    ant runcukes
+# Installing OpenCV
 
-This runs Cucumber features using Cucumber's Command Line Interface (CLI) runner. Note that the `RunCukesTest` junit class is not used at all.
-If you remove it (and the `cucumber-junit` jar dependency), it will run just the same.
+JavaCV is only a wrapper around OpenCV, so you have to have OpenCV first for anything to work. Sometimes it can be a huge pain installing libraries in a windows environment. Luckily there are working binaries for OpenCV. All you need to do is download and install them. The installer is really just a self-extracting zip file though, so once OpenCV has been extracted we need to add the bin/ folders to out PATH system variable, otherwise it wont be useable.
 
-## Overriding options
+Download OpenCV-2.3.1-win-superpack.exe
+Install to C:\
+Add C:\opencv\build\x64\vc10\bin;C:\opencv\build\common\tbb\intel64\vc10\ to your PATH system variable
+If you use a newer version of OpenCV you might end up adding a different path. Most people didn’t have put
+C:\opencv\build\common\tbb\intel64\vc10\ on their PATH, but it seems very important for the version I have.
 
-The Cucumber runtime parses command line options to know what features to run, where the glue code lives, what plugins to use etc.
-When you use the JUnit runner, these options are generated from the `@CucumberOptions` annotation on your test.
+I also saw several people insisting that it was very important that OpenCV be installed to the root
+of your C drive. While I am pretty sure you should be able to move it around anywhere and it work,
+as long as your PATH is set correctly, after several hours debugging you tend to start dropping assumptions
+like that and taking safe routes. Extract OpenCV anywhere you want, but if you are having trouble, try
+moving it to C:\
 
-Sometimes it can be useful to override these options without changing or recompiling the JUnit class. This can be done with the
-`cucumber.options` system property. The general form is:
+# Installing JavaCV
 
-Using Maven:
+* If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so
 
-    mvn -Dcucumber.options="..." test
+<dependency>
+  <groupId>org.bytedeco</groupId>
+  <artifactId>javacv</artifactId>
+  <version>0.9</version>
+</dependency>
+Their github page even suggests it saying 
+we can also have everything downloaded and installed automatically.
+While this will get JavaCV set up with your java project, it unfortunately will not
+play so well with your OpenCV native libraries you installed in the last step.
+Or it didn’t for me. I could not find a way to get the maven dependency working.
+And I wanted it to work so badly.
 
-Using Ant:
+Instead we will install the Jar files manually and add them to the projects build path.
 
-    JAVA_OPTIONS='-Dcucumber.options="..."' ant runcukes
+Download javacv-0.9-bin.zip
+Extract the zip file to anywhere, I chose C:\lib
+Remember where you extract JavaCV, we will need this location when configuring the build path next.
 
-Let's look at some things you can do with `cucumber.options`. Try this:
+Add JavaCV to your project’s build path in Eclipse
 
-    -Dcucumber.options="--help"
+We need to point our project to the JavaCV jar files we extracted in the previous step. There are plenty
+of examples out there about how to do this so I wont go in to too much detail, but the basics in Eclipse are:
 
-That should list all the available options.
+Project > Properties > Java Build Path > Libraries > Add External JARs
+Navigate to the location of JavaCV on your file system, for me that is C:\lib\javacv-bin
+Add all the jars, yes all of them.
+You should be good to go now. If not, you might need to read the next section. *
 
-*IMPORTANT*
+# feature an and pptx path:
 
-When you override options with `-Dcucumber.options`, you will completely override whatever options are hard-coded in
-your `@CucumberOptions` or in the script calling `cucumber.api.cli.Main`. There is one exception to this rule, and that
-is the `--plugin` option. This will not _override_, but _add_ a plugin. The reason for this is to make it easier
-for 3rd party tools (such as [Cucumber Pro](https://cucumber.pro/)) to automatically configure additional plugins by appending arguments to a `cucumber.properties`
-file.
+src\test\resources\googleSearch
 
-### Run a subset of Features or Scenarios
+# One Jar I would love to have this as a one jar executable. I have never been able to have the one jar
+class loader find the glue. P. Simon Tufts
 
-Specify a particular scenario by *line* (and use the pretty plugin, which prints the scenario back)
-
-    -Dcucumber.options="classpath:skeleton/belly.feature:4 --plugin pretty"
-
-This works because Maven puts `./src/test/resources` on your `classpath`.
-You can also specify files to run by filesystem path:
-
-    -Dcucumber.options="src/test/resources/skeleton/belly.feature:4 --plugin pretty"
-
-You can also specify what to run by *tag*:
-
-    -Dcucumber.options="--tags @bar --plugin pretty"
-
-### Running only the scenarios that failed in the previous run
-
-    -Dcucumber.options="@target/rerun.txt"
-
-This works as long as you have the `rerun` formatter enabled.
-
-### Specify a different formatter:
-
-For example a JUnit formatter:
-
-    -Dcucumber.options="--plugin junit:target/cucumber-junit-report.xml"
