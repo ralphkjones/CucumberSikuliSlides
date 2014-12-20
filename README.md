@@ -63,35 +63,35 @@ moving it to C:\
 
 ## Installing JavaCV
 
-*If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so
-
-<dependency>
-  <groupId>org.bytedeco</groupId>
-  <artifactId>javacv</artifactId>
-  <version>0.9</version>
-</dependency>
-Their github page even suggests it saying 
-we can also have everything downloaded and installed automatically.
-While this will get JavaCV set up with your java project, it unfortunately will not
-play so well with your OpenCV native libraries you installed in the last step.
-Or it didn’t for me. I could not find a way to get the maven dependency working.
-And I wanted it to work so badly.
-
-Instead we will install the Jar files manually and add them to the projects build path.
-
-Download javacv-0.9-bin.zip
-Extract the zip file to anywhere, I chose C:\lib
-Remember where you extract JavaCV, we will need this location when configuring the build path next.
-
-Add JavaCV to your project’s build path in Eclipse
-
-We need to point our project to the JavaCV jar files we extracted in the previous step. There are plenty
-of examples out there about how to do this so I wont go in to too much detail, but the basics in Eclipse are:
-
-Project > Properties > Java Build Path > Libraries > Add External JARs
-Navigate to the location of JavaCV on your file system, for me that is C:\lib\javacv-bin
-Add all the jars, yes all of them.
-You should be good to go now. If not, you might need to read the next section.*
+*If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so*
+**
+*<dependency>*
+*  <groupId>org.bytedeco</groupId>*
+*  <artifactId>javacv</artifactId>*
+*  <version>0.9</version>*
+*</dependency>*
+*Their github page even suggests it saying *
+*we can also have everything downloaded and installed automatically.*
+*While this will get JavaCV set up with your java project, it unfortunately will not*
+*play so well with your OpenCV native libraries you installed in the last step.*
+*Or it didn’t for me. I could not find a way to get the maven dependency working.*
+*And I wanted it to work so badly.*
+**
+*Instead we will install the Jar files manually and add them to the projects build path.*
+**
+*Download javacv-0.9-bin.zip*
+*Extract the zip file to anywhere, I chose C:\lib*
+*Remember where you extract JavaCV, we will need this location when configuring the build path next.*
+**
+*Add JavaCV to your project’s build path in Eclipse*
+**
+*We need to point our project to the JavaCV jar files we extracted in the previous step. There are plenty*
+*of examples out there about how to do this so I wont go in to too much detail, but the basics in Eclipse are:*
+**
+*Project > Properties > Java Build Path > Libraries > Add External JARs*
+*Navigate to the location of JavaCV on your file system, for me that is C:\lib\javacv-bin*
+*Add all the jars, yes all of them.*
+*You should be good to go now. If not, you might need to read the next section.*
 
 # feature an and pptx path:
 
