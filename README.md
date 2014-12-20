@@ -95,7 +95,7 @@ To correct:
 *Add all the jars, yes all of them.*
 *You should be good to go now. If not, you might need to read the next section.*
 
-# feature an and pptx path:
+# feature and pptx path:
 
 src\test\resources\googleSearch
 
