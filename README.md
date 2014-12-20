@@ -64,11 +64,13 @@ To correct:
 ## Installing JavaCV
 
 *If you are a Maven fan, like myself, you might be tempted to just add a dependency to your prom file like so*
+
 <dependency>
-  \<groupId>org.bytedeco</groupId>
-  \<artifactId>javacv</artifactId>
-  \<version>0.9</version>
+  <groupId>org.bytedeco</groupId>
+  <artifactId>javacv</artifactId>
+  <version>0.9</version>
 </dependency>
+
 *Their github page even suggests it saying *
 *we can also have everything downloaded and installed automatically.*
 *While this will get JavaCV set up with your java project, it unfortunately will not*
