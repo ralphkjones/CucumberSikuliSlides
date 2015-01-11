@@ -1,19 +1,19 @@
 # CucumberSikuliSlides
 
-This is the simplest possible build script setup for using Cucumber with Sikuli Slides in the step definitions.
+This is the simplest possible build script setup for using Sikuli Slides with Cucumber JVM in the step definitions.
 
 The project tests three data sets in a DataTable:
 
 @googleSearch
 Feature: Google Searches
   
-  In order to learn the sikuli slides ineterface to cucmber jvm I want to
+  In order to learn the sikuli slides interface to cucumber JVM I want to
   Use Google to search for different subjects and give different results
 
   Scenario Outline: Search for a few things at www.google.com
     Given I have opened google as my search engine
-    When I enter "<searchString>"
-    Then I should see "<powerPointFile>" "<helloBlurb>"
+    When I enter "searchString"
+    Then I should see "powerPointFile" "helloBlurb"
 
     Examples: 
       | searchString  | powerPointFile    | helloBlurb           |
@@ -22,14 +22,15 @@ Feature: Google Searches
       | cucumber jvm  | cucumberJvm.pptx  | Hello Cucumber JVM!  |
 
 
-This first dataset will work, the others work as far as the java. They dont work because the slides need to 
-be edited in Powerpoint. I purposly left them as not working so you could see  a passed test and a failed test.
-The problem is not with cuucmber, java or sikuli slides; the problem is in image recognition
+This first dataset will work the others work as far as the java. They don't work because the slides need to 
+be edited in Powerpoint. I purposely left them as not working so you could see  a passed test and a failed test.
+The problem is not with cucumber, java or sikuli slides; the problem is in the image recognition of the powerpoint slide
+to the screen
 
 # Problems, etc ...
 
 I could only make this run in the Eclipse IDE. I could not make it run in maven because I could not use the
-external image recognition jars in my loacl repository. I had to add them in as external jars in my eclipse
+external image recognition jars in my local repository. I had to add them in as external jars in my eclipse
 project.
 
 Running mvn test goes to google and then fails on image recognition:
