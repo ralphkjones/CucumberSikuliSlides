@@ -2,13 +2,13 @@
 
 This is the simplest possible build script setup for using Sikuli Slides with Cucumber JVM in the step definitions.
 
-The project tests three data sets in a DataTable:
+The project tests three datasets in a DataTable:
 
 @googleSearch
 Feature: Google Searches
   
-  In order to learn the sikuli slides interface to cucumber JVM I want to
-  Use Google to search for different subjects and give different results
+  In order to learn the sikuli slides interface to cucumber JVM, I want to
+  use Google to search for different subjects and give different results
 
   Scenario Outline: Search for a few things at www.google.com
     Given I have opened google as my search engine
@@ -22,10 +22,10 @@ Feature: Google Searches
       | cucumber jvm  | cucumberJvm.pptx  | Hello Cucumber JVM!  |
 
 
-This first dataset will work the others work as far as the java. They don't work because the slides need to 
-be edited in Powerpoint. I purposely left them as not working so you could see  a passed test and a failed test.
-The problem is not with cucumber, java or sikuli slides; the problem is in the image recognition of the powerpoint slide
-to the screen
+This first dataset will execute correctly. The other datasets execute correctly as far as the java. They don't
+work because the slides need to be edited in Powerpoint in order to work. I purposely left them as not working
+so you could see  a passed test and a failed test. The problem is not with cucumber, java or sikuli slides;
+the problem is in the image recognition of the powerpoint slide to the screen
 
 # Problems, etc ...
 
@@ -103,5 +103,6 @@ src\test\resources\googleSearch
 # One Jar
 
 I would love to have this as a one jar executable. I have never been able to have the one jar
-class loader find the glue. In the name of P. Simon Tufts
+class loader find the glue. In the name of P. Simon Tufts!
+
 
