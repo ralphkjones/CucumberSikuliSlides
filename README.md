@@ -1,6 +1,6 @@
-# CucumberSikuliSlides
+# Cucumber Sikuli Slides Cucumber JVM SikuliX CucumberSikuliSlides
 
-This is the simplest possible build script setup for using Sikuli Slides with Cucumber JVM in the step definitions.
+This is a simple build script setup for using Sikuli Slides with Cucumber JVM in the step definitions.
 
 The project tests three datasets in a DataTable:
 
@@ -8,7 +8,7 @@ The project tests three datasets in a DataTable:
 Feature: Google Searches
   
   In order to learn the sikuli slides interface to cucumber JVM, I want to
-  use Google to search for different subjects and give different results
+  use Google to search for different subjects and view different results
 
   Scenario Outline: Search for a few things at www.google.com
     Given I have opened google as my search engine
